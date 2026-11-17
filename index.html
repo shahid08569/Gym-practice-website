@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutu Webpage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+ 
+</head>
+<body>
+    <div class="home-page">
+        <section class="nav-section">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                  <!-- Left-aligned Logo -->
+                  <a class="navbar-brand" href="#">Mutu's Gym</a>
+                  <!-- Toggler for smaller screens -->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <!-- Right-aligned Nav Links -->
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="pages/about-us.html">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="pages/our-trainer.html">Our Trainers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#faqs">FAQs</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#nutrition">Nutrition</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">Contact Us</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </section>
+        <section class="home-section">
+            <div id="homeSlider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <!-- Slide 1 -->
+                  <div class="carousel-item active" style="background-image: url('img/bg-image.webp');">
+                    <div class="carousel-caption text-center">
+                      <h1>Welcome to <span>Mutu Fitness</span></h1>
+                      <p>"Push yourself because no one else is going to do it for you."</p>
+                      <button class="btn btn-register" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                    </div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="carousel-item" style="background-image: url('img/bg-image1.webp');">
+                    <div class="carousel-caption text-center text-light">
+                      <h1>
+                        Discover <span style="color: #FB6542;">Your Inner Champion</span>
+                      </h1>
+                      <p>
+                        "The journey to greatness begins with a single step."
+                      </p>
+                      <button class="btn btn-register mt-3"  data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Start Now
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <!-- Slide 3 -->
+                  <div class="carousel-item" style="background-image: url('img/bg-image2.webp'); ">
+                    <div class="carousel-caption text-center text-light" >
+                      <h1 >
+                        Welcome to <span style="color: #FFBB00;">Strength Redefined</span>
+                      </h1>
+                      <p>
+                        "Every drop of sweat is a step closer to your goals."
+                      </p>
+                      <button class="btn btn-register mt-3" style="background-color: #FB6542; color: #FFF; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Join Us Today
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <!-- Slide 4 -->
+                  <div class="carousel-item" style="background-image: url('img/bg-image3.webp');">
+                    <div class="carousel-caption text-center text-light" >
+                      <h1 >
+                        Embrace <span style="color: #375E97;">The Power Within</span>
+                      </h1>
+                      <p style="font-size: 1.2rem; font-style: italic; margin-top: 10px;">
+                        "Your only limit is you. Break the barriers."
+                      </p>
+                      <button class="btn btn-register mt-3" style="background-color: #FFBB00; color: #FFF; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+                
+                  <!-- Add more slides as needed -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#homeSlider" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            
+              <!-- Registration Modal -->
+              <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="registerModalLabel">Register for Mutu Fitness</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="registrationForm" onsubmit="return handleSubmit(event)">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Full Name</label>
+                          <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email Address</label>
+                          <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="phone" class="form-label">Phone Number</label>
+                          <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="goal" class="form-label">Your Fitness Goal</label>
+                          <textarea class="form-control" id="goal" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-register w-100">Register</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Success Modal -->
+              <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body text-center">
+                      <div class="success-icon">✔</div>
+                      <h5>Registered Successfully!</h5>
+                      <p>Thank you for joining Mutu Fitness!</p>
+                      <button class="btn btn-register mt-3" data-bs-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <section class=" let-started-section text-white py-5">  
+          <div class="container text-center">
+            <h2 class="text-warning display-5 fw-bold text-uppercase mb-4">Let's Get Started</h2>
+            <p class="fs-5 mb-5">Discover the perfect fitness program for your journey.</p>
+            <div class="row g-4">
+              <div class="col-md-3 ">
+                <div class="card border-0 bg-transparent card-overlay position-relative">
+                  <img src="img/let-1.jpg" class="card-img-top" alt="CrossFit">
+                  <div class="icon-circle position-absolute top-50 start-50 translate-middle">
+                    <img src="img/icon-1.png" alt="CrossFit Icon" class="icon-img">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Push your limits with intense functional training.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card border-0 bg-transparent card-overlay position-relative">
+                  <img src="img/let-2.jpg" class="card-img-top" alt="CVC">
+                  <div class="icon-circle position-absolute top-50 start-50 translate-middle">
+                    <img src="img/icon-2.png" alt="CVC Icon" class="icon-img">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Experience the next level of cardio-vascular conditioning.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card card-overlay border-0 bg-transparent position-relative">
+                  <img src="img/let-3.jpg" class="card-img-top" alt="Back To Basics">
+                  <div class="icon-circle position-absolute top-50 start-50 translate-middle">
+                    <img src="img/icon-3.png" alt="BackToBasic Icon" class="icon-img">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Rediscover foundational fitness with simple yet effective moves.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card card-overlay border-0 bg-transparent position-relative">
+                  <img src="img/let-4.jpg" class="card-img-top" alt="Personal Training">
+                  <div class="icon-circle position-absolute top-50 start-50 translate-middle">
+                    <img src="img/icon-4.png" alt="Personal Training Icon" class="icon-img">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Achieve your goals with tailored, one-on-one coaching.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="testimonial-section container-fluid ">
+         <div class="heading py-5">
+          <h2 class="text-warning display-5 fw-bold text-center text-uppercase">Hear from Our Fitness Family</h2>
+
+         </div>
+          <div class="row no-gutters">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4 p-3 testimonial-box">
+              <p>
+                "Mutu Fitness has changed my life! The trainers are amazing, and the environment is so motivating."
+              </p>
+            </div>
+            <div class="col-md-4 p-3 image-box">
+              <img src="img/textimonial-1.jpg" alt="Testimonial 1" class="img-fluid testi-1">
+            </div>
+            <div class="col-md-4 p-3 testimonial-box">
+              <p>
+                "The equipment here is top-notch, and the community is incredibly supportive."
+              </p>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <!-- Testimonial 2 -->
+            <div class="col-md-4 p-3 image-box">
+              <img src="img/testimonial-2.jpg" alt="Testimonial 2" class="img-fluid testi-2">
+            </div>
+            <div class="col-md-4 p-3 testimonial-box">
+              <p>
+                "Joining Mutu Fitness was the best decision I've ever made for my health!"
+              </p>
+            </div>
+            <div class="col-md-4 p-3 image-box">
+              <img src="img/testimonial-3.jpg" alt="Testimonial 3" class="img-fluid testi-3">
+            </div>
+          </div>
+        </section>
+        <section class="album-section ">
+          <div class="album-overlay pb-3">
+            <div class="container"> <div class="heading py-5">
+              <h2 class="text-warning display-5 fw-bold text-center text-uppercase">Our Gym Memories</h2>
+    
+             </div>
+              <div class="album-grid">
+                <!-- Images -->
+                <img src="img/album-2.jpg" alt="600x400" class="album-img">
+                <img src="img/album-1.jpg" alt="400x600" class="album-img">
+                <img src="img/testimonial-2.jpg" alt="800x400" class="album-img">
+                <img src="img/album-3.jpg" alt="400x400" class="album-img">
+                <img src="img/album-4.jpg" alt="800x600" class="album-img">
+                <img src="img/album-5.jpg" alt="400x800" class="album-img">
+                <img src="img/textimonial-1.jpg" alt="1200x600" class="album-img">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contact-form-section pb-3">
+          <div class="container">
+            <div class="heading py-4">
+              <h2 class="text-warning display-5 fw-bold text-center text-uppercase">Get in Touch</h2>
+    
+             </div>
+            <div class="row">
+              <!-- Left Side: Contact Details -->
+              <div class="col-md-6 contact-details">
+                <div class="details-item">
+                  <span class="contact-icon" style="color: #FB6542;">&#xf095;</span> 
+                  <span>Phone: <strong>098765</strong></span>
+                </div>
+                <div class="details-item">
+                  <span class="contact-icon" style="color: #FB6542;">&#xf0e0;</span>
+                  <span>Email: <strong>some@gmail.com</strong></span>
+                </div>
+                <div class="details-item">
+                  <span class="contact-icon" style="color: #FB6542;">&#xf3c5;</span>
+                  <span>Address: <strong>123 Gym St, Fitness City</strong></span>
+                </div>
+                <div class="details-item">
+                  <span class="contact-icon" style="color: #FB6542;">&#xf57d;</span>
+                  <span>Website: <strong>www.mutufitness.com</strong></span>
+                </div>
+                <div class="message-from-us">
+                  <h3 class="fw-bold fs-2">Message from Us</h3>
+                  <p >
+                    We are here to help you achieve your fitness goals. Drop us a message or visit us at
+                    our gym to start your journey today!
+                  </p>
+                </div>
+              </div>
+        
+              <!-- Right Side: Contact Form -->
+              <div class="col-md-6">
+                <form>
+                  <!-- Name -->
+                  <div class="form-group d-flex align-items-center mb-4">
+                    <span class="contact-icon" style="color: #375E97;">&#xf007;</span>
+                    <input type="text" class="form-control ms-3" placeholder="Your Name" required>
+                  </div>
+                  <!-- Email -->
+                  <div class="form-group d-flex align-items-center mb-4">
+                    <span class="contact-icon" style="color: #375E97;">&#xf0e0;</span>
+                    <input type="email" class="form-control ms-3" placeholder="Your Email" required>
+                  </div>
+                  <!-- Phone -->
+                  <div class="form-group d-flex align-items-center mb-4">
+                    <span class="contact-icon" style="color: #375E97;">&#xf095;</span>
+                    <input type="tel" class="form-control ms-3" placeholder="Your Phone Number" required>
+                  </div>
+                  <!-- Message -->
+                  <div class="form-group d-flex mb-4">
+                    <span class="contact-icon" style="color: #375E97;">&#xf075;</span>
+                    <textarea class="form-control ms-3" rows="4" placeholder="Your Message" required></textarea>
+                  </div>
+                  <!-- Submit Button -->
+                  <button type="submit" class="btn btn-primary w-100" style="background-color: #375E97;">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="map-section" style="position: relative; height: 400px; width: 100%;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52054.15065860102!2d75.59408787094658!3d35.335022337269134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d1a1da74b33d03%3A0x36993f209f7bb377!2sSkardu!5e0!3m2!1sen!2s!4v1697582644853!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style="border: 0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </section>
+        <footer class="footer-section">
+          <div class="container">
+            <div class="row gy-4">
+              <!-- First Column: Brand & Social Links -->
+              <div class="col-12 col-md-3">
+                <h3 class="footer-brand">Mutu <span style="color: #FB6542;">Fitness</span></h3>
+                <div class="footer-social-links d-flex">
+                  <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="me-3"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+        
+              <!-- Second Column: Contact Details -->
+              <div class="col-12 col-md-3">
+                <h4 class="footer-heading">Contact</h4>
+                <p><i class="fas fa-phone-alt me-2"></i> Phone: 098765</p>
+                <p><i class="fas fa-envelope me-2"></i> Email: some@gmail.com</p>
+                <p><i class="fas fa-globe me-2"></i> Website: www.mutufitness.com</p>
+              </div>
+        
+              <!-- Third Column: Quick Links -->
+              <div class="col-12 col-md-3">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="quick-links">
+                  <li><a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right me-2"></i> Nutrition</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right me-2"></i> Trainers</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right me-2"></i> FAQ's</a></li>
+                </ul>
+              </div>
+        
+              <!-- Fourth Column: Newsletter -->
+              <div class="col-12 col-md-3">
+                <h4 class="footer-heading">Newsletter</h4>
+                <form class="newsletter-form">
+                  <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+                    <button class="btn" type="submit">Sign Up</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">&copy; 2024 Mutu Fitness. All Rights Reserved.</div>
+        </footer>
+        
+        
+        
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
